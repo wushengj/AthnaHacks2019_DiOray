@@ -46,7 +46,7 @@ $colors-map: (
 );
 
 $theme-colors: (
-  "primary": $brand-primary,
+  "primary": #a000a0,
   "secondary": $white,
   "success": $light-green,
   "info": $brand-info,
@@ -59,7 +59,7 @@ $theme-colors: (
 
 // Layout //
 $body-bg: $light-gray;
-$top-nav-bg: $darkest-gray;
+$top-nav-bg: #800080;
 $body-color: $vue-darkest-blue !default;
 $layout-padding: 24px;
 $layout-padding-right: 44px;
@@ -69,7 +69,7 @@ $nav-padding-left: $layout-padding;
 $nav-padding-right: $layout-padding-right;
 $navbar-brand-container-left: 75px;
 
-$sidebar-bg: $darkest-gray;
+$sidebar-bg: #800080;
 $sidebar-width: 225px;
 $sidebar-top: calc(#{$top-nav-height} + #{$layout-padding});
 $sidebar-left: $layout-padding;
@@ -80,7 +80,7 @@ $content-wrap-pt: $layout-padding;
 $content-wrap-pb: $layout-padding;
 $made-by-footer-pb: 27px;
 
-$greeny-box-shadow: 0 4px 9.6px 0.4px rgba($vue-green, .5);
+$greeny-box-shadow: 0 4px 9.6px 0.4px rgba(#800080, .5);
 
 $min-z-index: -1000;
 
@@ -174,7 +174,7 @@ $sidebar-link-height: 64px;
 $sidebar-submenu-link-height: 48px;
 $sidebar-link-pl: 25px;
 $sidebar-submenu-link-pl: 74px;
-$sidebar-link-active-bg: $almost-black;
+$sidebar-link-active-bg: #500050;
 $sidebar-arrow-right: 16px;
 $sidebar-menu-item-icon-size: 19px;
 $sidebar-viewport-height: calc(100vh - #{$top-nav-height} - #{$content-wrap-pt} - #{$content-wrap-pb});

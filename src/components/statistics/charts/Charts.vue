@@ -1,61 +1,21 @@
 <template>
   <div class="charts-page">
-    <div class="va-row">
-      <div class="flex md6 xs12">
-        <vuestic-widget
-          class="chart-widget"
-          :headerText="$t('charts.verticalBarChart')"
-        >
-          <vuestic-chart :data="verticalBarChartData" type="vertical-bar"/>
-        </vuestic-widget>
-      </div>
-      <div class="flex md6 xs12">
-        <vuestic-widget
-          class="chart-widget"
-          :headerText="$t('charts.horizontalBarChart')"
-        >
-          <vuestic-chart :data="horizontalBarChartData" type="horizontal-bar"/>
-        </vuestic-widget>
-      </div>
-    </div>
-
-    <div class="va-row">
-      <div class="flex md12 xs12">
-        <vuestic-widget
-          class="chart-widget"
-          :headerText="$t('charts.lineChart')"
-        >
-          <vuestic-chart :data="lineChartData" type="line"/>
-        </vuestic-widget>
-      </div>
-    </div>
 
     <div class="va-row">
       <div class="flex md6 xs12">
         <vuestic-widget
           class="chart-widget"
-          :headerText="$t('charts.pieChart')"
+          headerText="Daily Sentiment Index"
         >
-          <vuestic-chart :data="pieChartData" type="pie"/>
+          <vuestic-chart :data="lineChartData" :options='options' type="line"/>
         </vuestic-widget>
       </div>
       <div class="flex md6 xs12">
         <vuestic-widget
           class="chart-widget"
-          :headerText="$t('charts.donutChart')"
+          headerText="Last Year Sentiment Ratios"
         >
           <vuestic-chart :data="donutChartData" type="donut"/>
-        </vuestic-widget>
-      </div>
-    </div>
-
-    <div class="va-row">
-      <div class="flex md12 xs12">
-        <vuestic-widget
-          class="chart-widget"
-          :headerText="$t('charts.bubbleChart')"
-        >
-          <vuestic-chart :data="bubbleChartData" type="bubble"/>
         </vuestic-widget>
       </div>
     </div>
@@ -83,6 +43,20 @@ export default {
     donutChartData: DonutChartData,
     verticalBarChartData: VerticalBarChartData,
     horizontalBarChartData: HorizontalBarChartData,
+    options: {
+      scales: {
+        xAxes: [{
+          type: 'time',
+          time: {
+            unit: 'day',
+            unitStepSize: 1,
+            displayFormats: {
+              'day': 'MMM DD'
+            }
+          }
+        }]
+      }
+    }
   }),
   methods: {
     refreshData () {

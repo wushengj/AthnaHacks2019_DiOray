@@ -61,7 +61,7 @@ export default {
       }
     }
     &:hover {
-      background-color: $hover-black;
+      background-color: $sidebar-link-active-bg;
     }
     .sidebar-menu-item-icon {
       font-size: $sidebar-menu-item-icon-size;

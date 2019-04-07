@@ -3,8 +3,8 @@
     ref="chart"
     class='vuestic-chart'
     :is="chartComponent"
-    :options="options"
     :chart-data="data"
+    :chartOptions='options'
   />
 </template>
 
@@ -19,9 +19,30 @@ import { chartTypesMap } from './VuesticChartConfigs'
 
 export default {
   name: 'vuestic-chart',
+  data: () => ({
+    options: {
+      scales: {
+        xAxes: [{
+          type: 'time',
+          time: {
+            unit: 'day',
+            unitStepSize: 5,
+            displayFormats: {
+              'day': 'MMM DD'
+            }
+          }
+        }],
+        yAxes: [{
+          display: true,
+          ticks: {
+            beginAtZero: true // minimum value will be 0.
+          }
+        }]
+      }
+    }
+  }),
   props: {
     data: {},
-    options: {},
     type: {
       validator (type) {
         const valid = type in chartTypesMap

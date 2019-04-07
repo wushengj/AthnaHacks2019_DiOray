@@ -4,7 +4,13 @@ import store from 'vuex-store'
 let palette = store.getters.palette
 
 const generateValue = () => {
-  return Math.floor(Math.random() * 100)
+  return Math.floor(Math.random() * Math.floor(60) + 40)
+}
+
+const generateTime = (i) => {
+  let date = new Date()
+  date.setDate(date.getDate() + i)
+  return date
 }
 
 const generateYLabels = () => {
@@ -13,7 +19,14 @@ const generateYLabels = () => {
 }
 
 const generateArray = (length) => {
-  return Array.from(Array(length), generateValue)
+  let res = []
+  for (let i = 0; i < length; i++) {
+    res.push({
+      t: generateTime(i),
+      y: generateValue()
+    })
+  }
+  return res
 }
 
 const getSize = () => {
@@ -27,20 +40,13 @@ export const getLineChartData = () => {
   const yLabels = generateYLabels()
 
   return {
-    labels: months.splice(0, size),
     datasets: [
       {
-        label: yLabels[0],
-        backgroundColor: utils.hex2rgb(palette.primary, 0.6).css,
-        borderColor: palette.transparent,
-        data: generateArray(size),
-      },
-      {
-        label: yLabels[1],
-        backgroundColor: utils.hex2rgb(palette.info, 0.6).css,
-        borderColor: palette.transparent,
-        data: generateArray(size),
-      },
+        label: 'Sentiment Index',
+        backgroundColor: utils.hex2rgb(palette.success, 0.3).css,
+        borderColor: palette.success,
+        data: generateArray(100)
+      }
     ],
   }
 }

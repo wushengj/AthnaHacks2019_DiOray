@@ -5,7 +5,7 @@
                       :headerText="$t('buttons.main')">
         <div class="va-row btn-margin-row">
           <div
-            class="flex sm6 lg6 xl3 justify--center">
+            class="flex sm6 justify--center">
             <button class="btn btn-primary">
               {{'buttons.button' | translate}}
             </button>

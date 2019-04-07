@@ -3,10 +3,10 @@ import store from 'vuex-store'
 let palette = store.getters.palette
 
 export default {
-  labels: ['North America', 'South America', 'Australia'],
+  labels: ['Positive', 'Neutral', 'Negative'],
   datasets: [{
-    label: 'Population (millions)',
-    backgroundColor: [palette.danger, palette.info, palette.success],
-    data: [2478, 5267, 734],
+    label: 'Days',
+    backgroundColor: [palette.danger, palette.success, palette.info],
+    data: [98, 47, 24],
   }],
 }

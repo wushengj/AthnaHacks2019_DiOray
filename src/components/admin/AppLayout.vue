@@ -5,7 +5,7 @@
     <main
       slot="content"
       id="content"
-      class="content va-layout gutter--lg fluid"
+      class="content va-layout gutter--lg fluid locale-en-us"
       role="main"
     >
       <app-breadcrumbs/>
@@ -15,9 +15,6 @@
       />
       <router-view/>
     </main>
-    <span slot="footer">
-      ©2018. Made by&nbsp;<a href="https://epicmax.co" target="_blank"> Epicmax</a>
-    </span>
   </vuestic-layout>
 </template>
 
@@ -36,7 +33,6 @@ export default {
     VuesticLayout,
     AppNavbar,
     AppSidebar,
-    AppBreadcrumbs,
   },
   directives: {
     layout: Layout,
